@@ -2,6 +2,7 @@ const express = require('express');
 const userRouter = require('./Routes/UserRoute');
 const categoryRoute = require('./Routes/CategoryRoute');
 const cors = require('cors');
+const produtroute = require('./Routes/Product');
 const config = require('./config');
 const mongoose = require('mongoose');
 const port = process.env.PORT || 6060;
@@ -12,6 +13,7 @@ app.use(cors());
 
 app.use('/auth', userRouter);
 app.use('/categories', categoryRoute);
+app.use('/product', produtroute);
 
 // enable the static url
 app.use('/public/uplods', express.static('Public/uploads'));
